@@ -12,7 +12,7 @@
     "build": "tsc",
     "test": "jest",
     "docs:generate": "typedoc --theme default --target ES5 --module commonjs --exclude **/*.test.ts --out ./docs/ ./src/",
-    "docs:push": "cd ./docs && git init && git remote add origin git@github.com:jahed/slack-utilities.git && git checkout -b www && git add . && git commit -m 'docs: new build' && git push -u origin www --force"
+    "docs:push": "cd ./docs && git init && git remote add origin git@github.com:jahed/slack-utilities.git && git checkout -b gh-pages && git add . && git commit -m 'docs: new build' && git push -u origin gh-pages --force"
   },
   "jest": {
     "transform": {

@@ -1,0 +1,42 @@
+{
+  "name": "@jahed/slack-utilities",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Jahed Ahmed",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "docs:generate": "typedoc --theme default --target ES5 --module commonjs --exclude **/*.test.ts --out ./docs/ ./src/",
+    "docs:push": "cd ./docs && git init && git remote add origin git@github.com:jahed/slack-utilities.git && git checkout -b www && git add . && git commit -m 'docs: new build' && git push -u origin www --force"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ]
+  },
+  "dependencies": {
+    "nock": "9.1.0",
+    "node-fetch": "1.7.3",
+    "qs": "6.5.1",
+    "ts-jest": "21.2.3"
+  },
+  "devDependencies": {
+    "@types/jest": "21.1.7",
+    "@types/nock": "8.2.1",
+    "@types/node-fetch": "1.6.7",
+    "@types/qs": "6.5.1",
+    "jest": "21.2.1",
+    "typedoc": "0.9.0",
+    "typescript": "2.6.1"
+  }
+}

@@ -11,7 +11,7 @@
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "prepublish": "yarn test && yarn run build",
+    "prepublishOnly": "yarn test && yarn run build",
     "postpublish": "git push --follow-tags",
     "docs": "bash -i ./docs.sh"
   },

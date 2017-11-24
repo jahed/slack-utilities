@@ -21,7 +21,7 @@ declare namespace Slack {
         readonly footer?: string, // "Slack API",
         readonly footer_icon?: string, // "https://platform.slack-edge.com/img/default_application_icon.png",
         readonly ts?: number, // 123456789,
-        readonly mrkdwn_in?: ['pretext', 'text', 'fields']
+        readonly mrkdwn_in?: ['pretext' | 'text' | 'fields']
     }
 
     export interface Message {

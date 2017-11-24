@@ -1,5 +1,5 @@
 import fetch, { Response as FetchResponse } from 'node-fetch'
-import { SlashCommand, Message } from './types'
+import { Message, SlashCommand } from './Slack'
 
 /**
  * Sends a Slack message using the `response_url` of a Slash Command.

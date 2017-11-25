@@ -1,4 +1,4 @@
-declare namespace Slack {
+namespace Slack {
     export interface Field {
         readonly title?: string, // "Priority",
         readonly value?: string, // "High",
@@ -34,19 +34,6 @@ declare namespace Slack {
         readonly link_names?: 1,
         readonly text?: string,
         readonly attachments?: [Attachment],
-    }
-
-    export interface SlashCommand {
-        readonly token: string,
-        readonly team_id: string,
-        readonly team_domain: string,
-        readonly channel_id: string,
-        readonly channel_name: string,
-        readonly user_id: string,
-        readonly user_name: string,
-        readonly command: string,
-        readonly text: string,
-        readonly response_url: string,
     }
 }
 

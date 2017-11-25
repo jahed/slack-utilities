@@ -1,4 +1,4 @@
-import { SlashCommand } from './Slack'
+import { SlashCommand } from './SlashCommand'
 
 /**
  * Verifies a Slash Command has the expected `verificationToken`, rejects otherwise.

@@ -1,5 +1,5 @@
 import { verifySlashCommand } from './verifySlashCommand'
-import { SlashCommand } from './slack'
+import { SlashCommand } from './SlashCommand'
 
 test('should resolve when token is valid', () => {
     const slashCommand: SlashCommand = {

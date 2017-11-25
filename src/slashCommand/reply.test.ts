@@ -1,6 +1,7 @@
 import { reply } from './reply'
 import * as nock from 'nock'
-import { SlackMessage, SlashCommand } from './slack'
+import { SlashCommand } from './SlashCommand'
+import { Message } from '../message/Message'
 
 test('should post reply successfully', () => {
     const slashCommand: SlashCommand = {
@@ -16,7 +17,7 @@ test('should post reply successfully', () => {
         response_url: 'https://example.com/endpoint',
     }
 
-    const response: SlackMessage = {
+    const response: Message = {
         text: 'hello'
     }
 
@@ -42,7 +43,7 @@ test('should post reply and fail', () => {
         response_url: 'https://example.com/endpoint',
     }
 
-    const response: SlackMessage = {
+    const response: Message = {
         text: 'hello'
     }
 

@@ -1,5 +1,5 @@
 import * as qs from 'qs'
-import { SlashCommand } from './Slack'
+import { SlashCommand } from './SlashCommand'
 
 /**
  * Parses a query string provided by a Slash Command web hook.

@@ -1,47 +1,42 @@
 {
   "name": "@jahed/slack-utilities",
   "version": "0.3.1",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "files": [
-    "dist"
+    "lib",
+    "docs"
   ],
-  "types": "dist/index.d.ts",
   "author": "Jahed Ahmed",
   "license": "MIT",
+  "sideEffects": false,
   "scripts": {
-    "build": "rimraf dist && tsc",
+    "lint": "tslint --project ./tsconfig.json",
     "test": "jest",
-    "prepublishOnly": "yarn test && yarn run build",
-    "postpublish": "git push --follow-tags",
-    "docs": "bash -i ./docs.sh"
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.tsx?$": "ts-jest"
-    },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json"
-    ]
+    "build:lib": "rimraf lib && tsc",
+    "build:docs": "rimraf docs && typedoc --theme default --exclude '**/*.test.ts' --out docs --mode file --target ES6",
+    "build": "yarn build:lib && yarn build:docs",
+    "push:git": "git push && git push --tags",
+    "push:docs": "bash -i ./publish-docs.sh",
+    "prepublishOnly": "yarn lint && yarn test && yarn build",
+    "postpublish": "yarn push:git && yarn push:docs"
   },
   "dependencies": {
-    "node-fetch": "1.7.3",
-    "qs": "6.5.1"
+    "node-fetch": "2.2.0",
+    "qs": "6.5.2"
   },
   "devDependencies": {
-    "@types/jest": "21.1.7",
-    "@types/nock": "8.2.1",
-    "@types/node-fetch": "1.6.7",
+    "@types/jest": "23.3.9",
+    "@types/nock": "9.3.0",
+    "@types/node-fetch": "2.1.2",
     "@types/qs": "6.5.1",
-    "jest": "21.2.1",
-    "nock": "9.1.0",
+    "jest": "23.6.0",
+    "nock": "10.0.1",
     "rimraf": "2.6.2",
-    "ts-jest": "21.2.3",
-    "typedoc": "0.9.0",
-    "typescript": "2.6.1"
+    "ts-jest": "23.10.4",
+    "tslint": "5.11.0",
+    "tslint-config-standard": "8.0.1",
+    "typedoc": "0.13.0",
+    "typescript": "3.1.6"
   }
 }

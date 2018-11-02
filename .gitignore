@@ -1,5 +1,6 @@
 node_modules
-dist
-*.log
-.idea
+lib
 docs
+.idea
+*.tgz
+*.log

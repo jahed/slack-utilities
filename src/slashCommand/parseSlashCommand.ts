@@ -4,8 +4,6 @@ import { SlashCommand } from './SlashCommand'
 /**
  * Parses a query string provided by a Slash Command web hook.
  */
-function parseSlashCommand(body: string): Promise<SlashCommand> {
-    return Promise.resolve(qs.parse(body))
-}
-
-export { parseSlashCommand }
+export const parseSlashCommand = (body: string): Promise<SlashCommand> => (
+  Promise.resolve(qs.parse(body))
+)
